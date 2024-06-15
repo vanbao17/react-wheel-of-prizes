@@ -209,8 +209,8 @@ const WheelComponent = ({
     
     ctx.shadowColor = 'rgba(255, 255, 255, 0.8)'; // màu của bóng là trắng
     ctx.shadowBlur = 5;                          // độ mờ của bóng
-    ctx.shadowOffsetX = 2;                        // khoảng cách ngang của bóng
-    ctx.shadowOffsetY = 2;
+    ctx.shadowOffsetX = 0;                        // khoảng cách ngang của bóng
+    ctx.shadowOffsetY = 0;
 
     
     // Draw outer circle
