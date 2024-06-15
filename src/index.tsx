@@ -197,7 +197,7 @@ const WheelComponent = ({
     ctx.arc(centerX, centerY, 50, 0, PI2, false)
     ctx.closePath()
     ctx.fillStyle = primaryColor
-    ctx.lineWidth = 0
+    ctx.lineWidth = 2
     ctx.strokeStyle = contrastColor
     ctx.fill()
     ctx.font = 'bold 1em ' + fontFamily
@@ -221,7 +221,7 @@ const WheelComponent = ({
       return false
     }
     const ctx = canvasContext
-    ctx.lineWidth = 1
+    ctx.lineWidth = 0
     ctx.strokeStyle = contrastColor
     ctx.fillStyle = contrastColor
     ctx.beginPath()
