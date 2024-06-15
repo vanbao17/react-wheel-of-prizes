@@ -211,13 +211,15 @@ const WheelComponent = ({
     ctx.arc(centerX, centerY, size, 0, PI2, false)
     ctx.closePath()
 
-    ctx.lineWidth = 0
+
     // ctx.strokeStyle = primaryColor
-    ctx.stroke()
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.5)'; // màu của bóng
-    ctx.shadowBlur = 10;                    // độ mờ của bóng
-    ctx.shadowOffsetX = 5;                  // khoảng cách ngang của bóng
-    ctx.shadowOffsetY = 5;             
+   ctx.lineWidth = 5; // bạn có thể thay đổi độ rộng của đường viền tùy theo ý thích
+    ctx.strokeStyle = primaryColor;
+    ctx.stroke();
+    ctx.shadowColor = 'rgba(255, 255, 255, 0.5)'; // màu của bóng là trắng
+    ctx.shadowBlur = 10;                          // độ mờ của bóng
+    ctx.shadowOffsetX = 5;                        // khoảng cách ngang của bóng
+    ctx.shadowOffsetY = 5;
   }
 
   const drawNeedle = () => {
