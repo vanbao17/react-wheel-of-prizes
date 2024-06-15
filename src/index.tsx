@@ -183,8 +183,8 @@ const WheelComponent = ({
     const PI2 = Math.PI * 2
     ctx.lineWidth = 0.5
     ctx.strokeStyle = primaryColor
-    ctx.textBaseline = 'middle'
-    ctx.textAlign = 'center'
+    ctx.textBaseline = 'bottom'
+    ctx.textAlign = 'right'
     ctx.font = '1em ' + fontFamily
     for (let i = 1; i <= len; i++) {
       const angle = PI2 * (i / len) + angleCurrent
@@ -211,7 +211,7 @@ const WheelComponent = ({
     ctx.arc(centerX, centerY, size, 0, PI2, false)
     ctx.closePath()
 
-    ctx.lineWidth = outlineWidth
+    ctx.lineWidth = 0
     ctx.strokeStyle = primaryColor
     ctx.stroke()
   }
