@@ -163,7 +163,7 @@ const WheelComponent = ({
     ctx.closePath()
     ctx.fillStyle = segColors[key % segColors.length]
     ctx.fill()
-    ctx.stroke()
+    ctx.stroke = segColors[key % segColors.length]
     ctx.save()
     ctx.translate(centerX, centerY)
     ctx.rotate((lastAngle + angle) / 2)
