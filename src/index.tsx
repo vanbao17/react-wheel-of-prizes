@@ -15,6 +15,7 @@ export interface WheelComponentProps {
   fontFamily?: string
   fontSize?: string
   outlineWidth?: number
+  segmentImages?: string 
 }
 console.log("sua lan 3 ve mac dinh");
 const WheelComponent = ({
@@ -31,7 +32,8 @@ const WheelComponent = ({
   downDuration = 1000,
   fontFamily = 'proxima-nova',
   fontSize = '1em',
-  outlineWidth = 5
+  outlineWidth = 5,
+  segmentImages = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fnature%2520wallpaper%25204k%2F&psig=AOvVaw1MGPubuU-znZSzG5LngzmV&ust=1718550205972000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIitucXw3YYDFQAAAAAdAAAAABAE' 
 }: WheelComponentProps) => {
   const randomString = () => {
     const chars =
@@ -164,6 +166,15 @@ const WheelComponent = ({
     ctx.fillStyle = segColors[key % segColors.length]
     ctx.fill()
     // ctx.stroke()
+    const image = new Image();
+      image.src = segmentImages[key];
+      image.onload = () => {
+        ctx.save();
+        ctx.translate(centerX, centerY);
+        ctx.rotate((lastAngle + angle) / 2);
+        ctx.drawImage(image, size / 2, -image.height / 2, image.width, image.height);
+        ctx.restore();
+      };
     ctx.save()
     ctx.translate(centerX, centerY)
     ctx.rotate((lastAngle + angle) / 2)
@@ -171,6 +182,9 @@ const WheelComponent = ({
     ctx.font = `bold ${fontSize} ${fontFamily}`
     ctx.fillText(value.substring(0, 21), size / 2 + 20, 0)
     ctx.restore()
+
+
+    
   }
 
   const drawWheel = () => {
