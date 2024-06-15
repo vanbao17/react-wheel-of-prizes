@@ -99,6 +99,7 @@ const WheelComponent = ({
   }
   const onTimerTick = () => {
     frames++
+    console.log(frames)
     draw()
     const duration = new Date().getTime() - spinStart
     let progress = 0
