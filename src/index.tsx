@@ -220,7 +220,7 @@ const WheelComponent = ({
 
 
     // ctx.strokeStyle = primaryColor
-    ctx.lineWidth = 5; // bạn có thể thay đổi độ rộng của đường viền tùy theo ý thích
+    ctx.lineWidth = 4; // bạn có thể thay đổi độ rộng của đường viền tùy theo ý thích
     ctx.strokeStyle = primaryColor;
     ctx.stroke();
     
