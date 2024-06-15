@@ -221,7 +221,7 @@ const WheelComponent = ({
       return false
     }
     const ctx = canvasContext
-    ctx.lineWidth = 0
+    ctx.lineWidth = 2
     ctx.strokeStyle = contrastColor
     ctx.fillStyle = contrastColor
     ctx.beginPath()
