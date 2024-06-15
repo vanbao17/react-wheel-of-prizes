@@ -212,7 +212,7 @@ const WheelComponent = ({
     ctx.closePath()
 
     ctx.lineWidth = 0
-    ctx.strokeStyle = primaryColor
+    // ctx.strokeStyle = primaryColor
     ctx.stroke()
     ctx.shadowColor = 'rgba(0, 0, 0, 0.5)'; // màu của bóng
     ctx.shadowBlur = 10;                    // độ mờ của bóng
