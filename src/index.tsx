@@ -28,7 +28,7 @@ const WheelComponent = ({
   isOnlyOnce = true,
   size = window.innerWidth,
   upDuration = 100,
-  downDuration = 1000,
+  downDuration = 5000,
   fontFamily = 'proxima-nova',
   fontSize = '1em',
   outlineWidth = 10
@@ -72,7 +72,7 @@ const WheelComponent = ({
     initCanvas()
     wheelDraw()
   }
-
+  console.log(winningSegment);
   const initCanvas = () => {
     let canvas: HTMLCanvasElement | null = document.getElementById(
       canvasId.current
