@@ -181,10 +181,10 @@ const WheelComponent = ({
     let lastAngle = angleCurrent
     const len = segments.length
     const PI2 = Math.PI * 2
-    ctx.lineWidth = 0.5
+    ctx.lineWidth = 0
     ctx.strokeStyle = primaryColor
-    ctx.textBaseline = 'bottom'
-    ctx.textAlign = 'right'
+    ctx.textBaseline = 'middle'
+    ctx.textAlign = 'left'
     ctx.font = '1em ' + fontFamily
     for (let i = 1; i <= len; i++) {
       const angle = PI2 * (i / len) + angleCurrent
