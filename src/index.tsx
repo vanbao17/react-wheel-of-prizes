@@ -207,7 +207,7 @@ const WheelComponent = ({
     ctx.stroke()
 
     
-    ctx.shadowColor = 'rgba(255, 255, 255, 0.5)'; // màu của bóng là trắng
+    ctx.shadowColor = 'rgba(255, 255, 255, 0.8)'; // màu của bóng là trắng
     ctx.shadowBlur = 10;                          // độ mờ của bóng
     ctx.shadowOffsetX = 5;                        // khoảng cách ngang của bóng
     ctx.shadowOffsetY = 5;
