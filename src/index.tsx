@@ -208,9 +208,9 @@ const WheelComponent = ({
 
     
     ctx.shadowColor = 'rgba(255, 255, 255, 0.8)'; // màu của bóng là trắng
-    ctx.shadowBlur = 1;                          // độ mờ của bóng
-    ctx.shadowOffsetX = 5;                        // khoảng cách ngang của bóng
-    ctx.shadowOffsetY = 5;
+    ctx.shadowBlur = 5;                          // độ mờ của bóng
+    ctx.shadowOffsetX = 2;                        // khoảng cách ngang của bóng
+    ctx.shadowOffsetY = 2;
 
     
     // Draw outer circle
@@ -220,7 +220,7 @@ const WheelComponent = ({
 
 
     // ctx.strokeStyle = primaryColor
-     ctx.lineWidth = 1; // bạn có thể thay đổi độ rộng của đường viền tùy theo ý thích
+    ctx.lineWidth = 5; // bạn có thể thay đổi độ rộng của đường viền tùy theo ý thích
     ctx.strokeStyle = primaryColor;
     ctx.stroke();
     
