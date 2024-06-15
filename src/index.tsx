@@ -31,7 +31,7 @@ const WheelComponent = ({
   downDuration = 1000,
   fontFamily = 'proxima-nova',
   fontSize = '1em',
-  outlineWidth = 10
+  outlineWidth = 5
 }: WheelComponentProps) => {
   const randomString = () => {
     const chars =
@@ -181,7 +181,7 @@ const WheelComponent = ({
     let lastAngle = angleCurrent
     const len = segments.length
     const PI2 = Math.PI * 2
-    ctx.lineWidth = 1
+    ctx.lineWidth = 0.5
     ctx.strokeStyle = primaryColor
     ctx.textBaseline = 'middle'
     ctx.textAlign = 'center'
@@ -197,7 +197,7 @@ const WheelComponent = ({
     ctx.arc(centerX, centerY, 50, 0, PI2, false)
     ctx.closePath()
     ctx.fillStyle = primaryColor
-    ctx.lineWidth = 10
+    ctx.lineWidth = 5
     ctx.strokeStyle = contrastColor
     ctx.fill()
     ctx.font = 'bold 1em ' + fontFamily
