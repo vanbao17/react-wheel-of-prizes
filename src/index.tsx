@@ -206,6 +206,13 @@ const WheelComponent = ({
     ctx.fillText(buttonText, centerX, centerY + 3)
     ctx.stroke()
 
+    
+    ctx.shadowColor = 'rgba(255, 255, 255, 0.5)'; // màu của bóng là trắng
+    ctx.shadowBlur = 10;                          // độ mờ của bóng
+    ctx.shadowOffsetX = 5;                        // khoảng cách ngang của bóng
+    ctx.shadowOffsetY = 5;
+
+    
     // Draw outer circle
     ctx.beginPath()
     ctx.arc(centerX, centerY, size, 0, PI2, false)
@@ -213,13 +220,10 @@ const WheelComponent = ({
 
 
     // ctx.strokeStyle = primaryColor
-   ctx.lineWidth = 5; // bạn có thể thay đổi độ rộng của đường viền tùy theo ý thích
+     ctx.lineWidth = 1; // bạn có thể thay đổi độ rộng của đường viền tùy theo ý thích
     ctx.strokeStyle = primaryColor;
     ctx.stroke();
-    ctx.shadowColor = 'rgba(255, 255, 255, 0.5)'; // màu của bóng là trắng
-    ctx.shadowBlur = 10;                          // độ mờ của bóng
-    ctx.shadowOffsetX = 5;                        // khoảng cách ngang của bóng
-    ctx.shadowOffsetY = 5;
+    
   }
 
   const drawNeedle = () => {
