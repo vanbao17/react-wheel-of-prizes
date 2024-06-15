@@ -16,7 +16,7 @@ export interface WheelComponentProps {
   fontSize?: string;
   outlineWidth?: number;
 }
-
+console.log("sua lan 1 ");
 const WheelComponent = ({
   segments,
   segColors,
