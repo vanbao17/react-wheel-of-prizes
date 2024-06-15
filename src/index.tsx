@@ -16,7 +16,7 @@ export interface WheelComponentProps {
   fontSize?: string;
   outlineWidth?: number;
 }
-console.log("sua lan 1 ");
+console.log("sua lan 2");
 const WheelComponent = ({
   segments,
   segColors,
@@ -93,14 +93,12 @@ const WheelComponent = ({
   };
 
   const spin = () => {
-    if (spinCount < 10) {
-      isStarted = true;
-      if (timerHandle === 0) {
-        spinStart = new Date().getTime();
-        maxSpeed = Math.PI / segments.length;
-        frames = 0;
-        timerHandle = window.setInterval(onTimerTick, timerDelay);
-      }
+    isStarted = true;
+    if (timerHandle === 0) {
+      spinStart = new Date().getTime();
+      maxSpeed = Math.PI / segments.length;
+      frames = 0;
+      timerHandle = window.setInterval(onTimerTick, timerDelay);
       setSpinCount(spinCount + 1);
     }
   };
@@ -138,7 +136,7 @@ const WheelComponent = ({
     angleCurrent += angleDelta;
     while (angleCurrent >= Math.PI * 2) angleCurrent -= Math.PI * 2;
 
-    if (finished && spinCount === 10) { // Stop and call onFinished after 10 spins
+    if (finished && (isOnlyOnce || spinCount === 10)) { // Stop after 10 spins or when isOnlyOnce is true
       setFinished(true);
       onFinished(currentSegment);
       clearInterval(timerHandle);
