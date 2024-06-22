@@ -17,7 +17,6 @@ export interface WheelComponentProps {
   outlineWidth?: number
   segmentImages?: string 
 }
-console.log("sua lan 3 ve mac dinh");
 const WheelComponent = ({
   segments,
   segColors,
@@ -101,7 +100,6 @@ const WheelComponent = ({
   }
   const onTimerTick = () => {
     frames++
-    console.log(frames)
     draw()
     const duration = new Date().getTime() - spinStart
     let progress = 0
