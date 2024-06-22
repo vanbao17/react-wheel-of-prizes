@@ -127,15 +127,7 @@ const WheelComponent = ({
     }
 
     angleCurrent += angleDelta
-    if (segments.length > 50) {
-    while (angleCurrent >= Math.PI * 20) {
-        angleCurrent -= Math.PI * 10;
-    }
-    } else {
-        while (angleCurrent >= Math.PI * 2) {
-            angleCurrent -= Math.PI * 2;
-        }
-    }
+    while (angleCurrent >= Math.PI * 20) angleCurrent -= Math.PI * 10
     if (finished) {
       setFinished(true)
       onFinished(currentSegment)
