@@ -15,9 +15,8 @@ export interface WheelComponentProps {
   fontFamily?: string
   fontSize?: string
   outlineWidth?: number
-  segmentImages?: string 
 }
-console.log(123);
+
 const WheelComponent = ({
   segments,
   segColors,
@@ -32,8 +31,7 @@ const WheelComponent = ({
   downDuration = 1000,
   fontFamily = 'proxima-nova',
   fontSize = '1em',
-  outlineWidth = 5,
-  segmentImages = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fnature%2520wallpaper%25204k%2F&psig=AOvVaw1MGPubuU-znZSzG5LngzmV&ust=1718550205972000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIitucXw3YYDFQAAAAAdAAAAABAE' 
+  outlineWidth = 10
 }: WheelComponentProps) => {
   const randomString = () => {
     const chars =
@@ -110,7 +108,7 @@ const WheelComponent = ({
       angleDelta = maxSpeed * Math.sin((progress * Math.PI) / 2)
     } else {
       if (winningSegment) {
-        if (currentSegment === winningSegment && frames > segments.length*2) {
+        if (currentSegment === winningSegment && frames > segments.length) {
           progress = duration / upTime
           angleDelta =
             maxSpeed * Math.sin((progress * Math.PI) / 2 + Math.PI / 2)
@@ -128,7 +126,7 @@ const WheelComponent = ({
     }
 
     angleCurrent += angleDelta
-    while (angleCurrent >= Math.PI * 20) angleCurrent -= Math.PI * 10
+    while (angleCurrent >= Math.PI * 2) angleCurrent -= Math.PI * 2
     if (finished) {
       setFinished(true)
       onFinished(currentSegment)
@@ -164,8 +162,7 @@ const WheelComponent = ({
     ctx.closePath()
     ctx.fillStyle = segColors[key % segColors.length]
     ctx.fill()
-    // ctx.stroke()
-    
+    ctx.stroke()
     ctx.save()
     ctx.translate(centerX, centerY)
     ctx.rotate((lastAngle + angle) / 2)
@@ -173,9 +170,6 @@ const WheelComponent = ({
     ctx.font = `bold ${fontSize} ${fontFamily}`
     ctx.fillText(value.substring(0, 21), size / 2 + 20, 0)
     ctx.restore()
-
-
-    
   }
 
   const drawWheel = () => {
@@ -186,10 +180,10 @@ const WheelComponent = ({
     let lastAngle = angleCurrent
     const len = segments.length
     const PI2 = Math.PI * 2
-    ctx.lineWidth = 0
-    // ctx.strokeStyle = primaryColor
+    ctx.lineWidth = 1
+    ctx.strokeStyle = primaryColor
     ctx.textBaseline = 'middle'
-    ctx.textAlign = 'left'
+    ctx.textAlign = 'center'
     ctx.font = '1em ' + fontFamily
     for (let i = 1; i <= len; i++) {
       const angle = PI2 * (i / len) + angleCurrent
@@ -211,24 +205,14 @@ const WheelComponent = ({
     ctx.fillText(buttonText, centerX, centerY + 3)
     ctx.stroke()
 
-    
-    ctx.shadowColor = 'rgba(255, 255, 255, 0.8)'; // màu của bóng là trắng
-    ctx.shadowBlur = 8;                          // độ mờ của bóng
-    ctx.shadowOffsetX = 0;                        // khoảng cách ngang của bóng
-    ctx.shadowOffsetY = 0;
-
-    
     // Draw outer circle
     ctx.beginPath()
     ctx.arc(centerX, centerY, size, 0, PI2, false)
     ctx.closePath()
 
-
-    // ctx.strokeStyle = primaryColor
-    ctx.lineWidth = 4; // bạn có thể thay đổi độ rộng của đường viền tùy theo ý thích
-    ctx.strokeStyle = primaryColor;
-    ctx.stroke();
-    
+    ctx.lineWidth = outlineWidth
+    ctx.strokeStyle = primaryColor
+    ctx.stroke()
   }
 
   const drawNeedle = () => {
@@ -236,7 +220,7 @@ const WheelComponent = ({
       return false
     }
     const ctx = canvasContext
-    ctx.lineWidth = 2
+    ctx.lineWidth = 1
     ctx.strokeStyle = contrastColor
     ctx.fillStyle = contrastColor
     ctx.beginPath()
