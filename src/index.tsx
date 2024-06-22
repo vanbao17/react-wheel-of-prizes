@@ -17,6 +17,7 @@ export interface WheelComponentProps {
   outlineWidth?: number
   segmentImages?: string 
 }
+console.log(123);
 const WheelComponent = ({
   segments,
   segColors,
