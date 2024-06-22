@@ -164,15 +164,7 @@ const WheelComponent = ({
     ctx.fillStyle = segColors[key % segColors.length]
     ctx.fill()
     // ctx.stroke()
-    const image = new Image();
-      image.src = segmentImages[key];
-      image.onload = () => {
-        ctx.save();
-        ctx.translate(centerX, centerY);
-        ctx.rotate((lastAngle + angle) / 2);
-        ctx.drawImage(image, size / 2, -image.height / 2, image.width, image.height);
-        ctx.restore();
-      };
+    
     ctx.save()
     ctx.translate(centerX, centerY)
     ctx.rotate((lastAngle + angle) / 2)
