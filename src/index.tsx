@@ -109,7 +109,7 @@ const WheelComponent = ({
       angleDelta = maxSpeed * Math.sin((progress * Math.PI) / 2)
     } else {
       if (winningSegment) {
-        if (currentSegment === winningSegment && frames > segments.length*2) {
+        if (currentSegment === winningSegment && frames > segments.length) {
           progress = duration / upTime
           angleDelta =
             maxSpeed * Math.sin((progress * Math.PI) / 2 + Math.PI / 2)
